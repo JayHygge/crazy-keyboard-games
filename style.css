@@ -1,0 +1,280 @@
+/* --- Global Styles & Fonts --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* --- Header with Search Bar --- */
+header {
+    background-color: #FFD700;
+    padding: 0.75rem 2rem;
+    border-bottom: 2px solid #e6c200;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1c1e22; /* NEW dark color for high contrast */
+    text-decoration: none;
+}
+/* ... and ... */
+.user-actions .action-icon {
+    color: #1c1e22; /* NEW dark color for high contrast */
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #1c1e22;
+    border-radius: 20px;
+    padding: 0.25rem;
+    width: 40%;
+    /* Centering the search bar */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.search-input {
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.search-button {
+    background-color: #4a4d53;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Main Page Layout --- */
+.page-container {
+    /* No longer centered, it will fill the width */
+}
+
+/* --- Fly-out Sidebar Styles (The Main Change is Here) --- */
+.left-sidebar {
+    width: 70px;
+    padding-top: 1rem;
+    overflow-x: hidden;
+    transition: width 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Updated transition */
+    position: fixed;
+    top: 67px;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    border-right: 1px solid #2f3136; /* ADD THIS LINE - uses the game card color */
+}
+
+.left-sidebar:hover {
+    width: 240px; /* Expanded width on hover */
+    background-color: #121212; /* This is the line to add */
+    border-right-color: transparent; /* ADD THIS LINE */
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sidebar-section {
+    padding: 1rem 0;
+    border-bottom: 1px solid #444;
+}
+.sidebar-section:last-child {
+    border-bottom: none;
+}
+
+.category-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 0.75rem 0;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.category-link:hover {
+    color: #FFD700;
+    background: linear-gradient(90deg, rgba(74,77,83,0.5) 0%, rgba(74,77,83,0) 100%);
+    border-left: 3px solid #FFD700;
+}
+
+.category-link i {
+    font-size: 1.2rem;
+    width: 70px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.category-link span {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.left-sidebar:hover .category-link span {
+    opacity: 1;
+}
+
+/* --- Main Content Grid --- */
+.main-content-grid {
+    /* NEW: Add margin to the left to make space for the fixed sidebar */
+    margin-left: 90px; /* Collapsed sidebar width (70px) + a 20px gap */
+    padding: 2rem; /* Add padding here instead of on the container */
+    transition: margin-left 0.3s ease-in-out;
+    width: calc(100% - 90px); /* Calculate width to prevent overflow issues */
+}
+
+.main-content-grid h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+.game-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+/* --- Game Card Styling (No changes needed) --- */
+.game-card { background-color: #2f3136; border-radius: 12px; text-decoration: none; color: #e0e0e0; overflow: hidden; transition: transform 0.2s ease; }
+.game-card:hover { transform: translateY(-5px); box-shadow: 0 3px 10px rgba(255, 215, 0, 0.75); }
+.game-card img { width: 100%; height: 140px; object-fit: cover; border-bottom: 1px solid #444; }
+.game-card-info { padding: 1rem; }
+.game-card h3 { margin: 0 0 0.25rem 0; font-size: 1.1rem; font-weight: 600; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.game-card p { font-size: 0.9rem; color: #ccc; margin: 0; }
+
+/* --- Sidebar Icon Colors --- */
+.category-home i { color: #58a6ff; }     /* Blue */
+.category-recent i { color: #f29e38; } /* Orange */
+.category-new i { color: #f1e05a; }      /* Yellow */
+.category-trending i { color: #e96454; } /* Red */
+
+.category-puzzle i { color: #a97bff; }  /* Purple */
+.category-action i { color: #ff7b72; }  /* Coral */
+.category-racing i { color: #6a737d; }  /* Grey */
+.category-sports i { color: #85d996; }  /* Green */
+.category-strategy i { color: #f982c2; }/* Pink */
+
+/* We also need to make sure the hover color doesn't override the icon color */
+.category-link:hover i {
+    color: inherit; /* This tells the icon to keep its original color on hover */
+}
+
+/* --- H1 Title Styling --- */
+.main-content-grid h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+/* --- Game Page Title Consistency --- */
+.game-details-box h3,
+.sidebar h3 {
+    border-bottom: 2px solid #FFD700; /* Gold underline for titles */
+    padding-bottom: 0.5rem;
+}
+
+/* --- Game Page Specific Layout --- */
+.game-wrapper {
+    display: flex;
+    gap: 2rem;
+}
+.game-main {
+    flex: 1;
+    min-width: 0;
+}
+.game-page-sidebar {
+    flex-basis: 350px;
+    flex-shrink: 0;
+}
+
+/* Adjust the main content grid for game pages that have no left sidebar */
+.main-content-grid.full-width {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* --- Centered Footer --- */
+footer {
+    /* This aligns the footer with the main content grid */
+    margin-left: 90px;
+    padding: 2rem;
+    text-align: center;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* --- Responsive Media Queries --- */
+
+/* This rule applies to any screen 1024px wide or smaller */
+@media (max-width: 1024px) {
+
+    /* On smaller screens, the game wrapper stacks vertically */
+    .game-wrapper {
+        flex-direction: column;
+    }
+
+    /* Make both the main game area and the sidebar take up the full width */
+    .game-main,
+    .game-page-sidebar {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    /* We remove the fixed left sidebar entirely on small screens */
+    .left-sidebar {
+        display: none;
+    }
+
+    /* The main content takes up the full screen width */
+    .main-content-grid, footer {
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem; /* Reduce padding slightly on mobile */
+        box-sizing: border-box; /* Important for correct width calculation */
+    }
+
+    /* Allow the search bar to shrink and the logo to be more prominent */
+    .header-content {
+        flex-wrap: wrap; /* Allow items to wrap if needed */
+        justify-content: center;
+    }
+    .search-bar {
+        order: 3; /* Move search bar to a new line on very small screens */
+        width: 100%;
+        margin-top: 0.5rem;
+        position: static; /* Unset the absolute positioning */
+        transform: none; /* Unset the transform */
+    }
+    .logo {
+        margin-left: 0; /* Unset the margin for the logo on mobile */
+    }
+}
