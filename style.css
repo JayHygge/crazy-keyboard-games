@@ -8,10 +8,37 @@
   --card-bg: #2f3136;
   --border-color: #444;
   --hover-bg: rgba(74, 77, 83, 0.5);
+  /* Add breakpoint variables */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+}
+
+/* Add skip link styles */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: var(--text-dark);
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.2s ease-in-out;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Add focus styles */
+:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
   background-color: var(--background-dark);
   color: var(--text-light);
@@ -84,6 +111,7 @@ header {
 
 /* --- Fly-out Sidebar Styles (The Main Change is Here) --- */
 .left-sidebar {
+  will-change: width;
   width: 70px;
   padding-top: 1rem;
   overflow-x: hidden;
@@ -93,7 +121,7 @@ header {
   left: 0;
   bottom: 0;
   z-index: 999;
-  border-right: 1px solid #2f3136; /* ADD THIS LINE - uses the game card color */
+  border-right: 1px solid var(--card-bg); /* ADD THIS LINE - uses the game card color */
 }
 
 .left-sidebar:hover {
@@ -153,11 +181,12 @@ header {
 
 /* --- Main Content Grid --- */
 .main-content-grid {
-  /* NEW: Add margin to the left to make space for the fixed sidebar */
-  margin-left: 90px; /* Collapsed sidebar width (70px) + a 20px gap */
-  padding: 2rem; /* Add padding here instead of on the container */
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-left: 90px;
+  padding: 2rem;
   transition: margin-left 0.3s ease-in-out;
-  width: calc(100% - 90px); /* Calculate width to prevent overflow issues */
+  width: calc(100% - 90px);
 }
 
 .main-content-grid h2 {
@@ -173,10 +202,11 @@ header {
 
 /* --- Game Card Styling (No changes needed) --- */
 .game-card {
-  background-color: #2f3136;
+  contain: content;
+  background-color: var(--card-bg);
   border-radius: 12px;
   text-decoration: none;
-  color: #e0e0e0;
+  color: var(--text-light);
   overflow: hidden;
   transition: transform 0.2s ease;
 }
@@ -376,5 +406,29 @@ footer {
 
   .category-link span {
     opacity: 1;
+  }
+}
+
+/* Add print styles */
+@media print {
+  .left-sidebar,
+  .search-bar,
+  .user-actions {
+    display: none;
+  }
+
+  .main-content-grid {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  body {
+    background-color: white;
+    color: black;
+  }
+
+  .game-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }

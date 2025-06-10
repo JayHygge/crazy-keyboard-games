@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-D4CE1ZYVCT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-D4CE1ZYVCT");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -9,6 +23,17 @@
     />
     <title>Crazy Keyboard Games - Free Online Browser Games</title>
     <link rel="canonical" href="https://www.crazykeyboardgames.com/" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta
+      property="og:title"
+      content="Crazy Keyboard Games - Free Online Browser Games"
+    />
+    <meta
+      property="og:description"
+      content="Play the best free online games for your keyboard and mouse!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.crazykeyboardgames.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,6 +47,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
       <div class="header-content">
         <a href="index.html" class="logo" aria-label="Crazy Keyboard Games Home"
@@ -115,6 +141,9 @@
             <img
               src="https://via.placeholder.com/300x200?text=Game+1"
               alt="Game Title One thumbnail"
+              loading="lazy"
+              width="300"
+              height="200"
             />
             <div class="game-card-info">
               <h3>Game Title One</h3>
@@ -125,6 +154,9 @@
             <img
               src="https://via.placeholder.com/300x200?text=Game+2"
               alt="Game Title Two thumbnail"
+              loading="lazy"
+              width="300"
+              height="200"
             />
             <div class="game-card-info">
               <h3>Game Title Two</h3>
