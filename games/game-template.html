@@ -96,6 +96,26 @@
               </div>
             </div>
 
+            <!-- Walkthrough Video -->
+            <div id="gamemonetize-video"></div>
+            <script type="text/javascript">
+              window.VIDEO_OPTIONS = {
+                gameid: "[GAME_ID]", // Replace with actual game ID
+                width: "100%",
+                height: "380px",
+                color: "#3f007e",
+                getAds: "false",
+              };
+              (function (a, b, c) {
+                var d = a.getElementsByTagName(b)[0];
+                a.getElementById(c) ||
+                  ((a = a.createElement(b)),
+                  (a.id = c),
+                  (a.src = "https://api.gamemonetize.com/video.js"),
+                  d.parentNode.insertBefore(a, d));
+              })(document, "script", "gamemonetize-video-api");
+            </script>
+
             <div class="game-details-box">
               <h2>About [Game Name]</h2>
               <p class="game-description">[Detailed game description]</p>
@@ -226,11 +246,26 @@
         const gameContainer = document.querySelector(".game-container");
         const loadingElement = document.querySelector(".game-loading");
 
-        // TODO: Replace with actual game loading logic
-        setTimeout(() => {
+        // Create iframe for the game
+        const iframe = document.createElement("iframe");
+        iframe.src = "[GAME_URL]"; // Replace with actual game URL
+        iframe.width = "100%";
+        iframe.height = "100%";
+        iframe.frameBorder = "0";
+        iframe.scrolling = "none";
+        iframe.allowFullscreen = true;
+        iframe.title = "[Game Name]";
+
+        // Show loading spinner
+        loadingElement.style.display = "flex";
+
+        // When iframe loads, hide loading spinner
+        iframe.onload = () => {
           loadingElement.style.display = "none";
-          // Add game iframe or canvas here
-        }, 1000);
+        };
+
+        // Add iframe to container
+        gameContainer.appendChild(iframe);
       }
 
       // Load similar games
