@@ -22,13 +22,22 @@
 
     <script type="text/javascript">
         window.SDK_OPTIONS = {
-            // THIS IS THE CORRECT ID FROM YOUR SCREENSHOT
             gameId: "0oj4ohrdfog5hba9jp7i47j0fn8ov9v2",
-
             containerId: "game-container",
 
+            // This function listens for events from the SDK
             onEvent: function (event) {
                 console.log("SDK_EVENT:", event.name, event.data || "");
+
+                // NEW CODE: When the SDK is ready, we tell it to show the game.
+                switch (event.name) {
+                    case "SDK_READY":
+                        // Check if the sdk object is available and then call showGame
+                        if (typeof sdk !== 'undefined' && typeof sdk.showGame === 'function') {
+                            sdk.showGame();
+                        }
+                        break;
+                }
             }
         };
     </script>
