@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-D4CE1ZYVCT"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-D4CE1ZYVCT");
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -23,17 +9,24 @@
     />
     <title>Crazy Keyboard Games - Free Online Browser Games</title>
     <link rel="canonical" href="https://www.crazykeyboardgames.com/" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Social Media Meta Tags -->
     <meta
       property="og:title"
       content="Crazy Keyboard Games - Free Online Browser Games"
     />
     <meta
       property="og:description"
-      content="Play the best free online games for your keyboard and mouse!"
+      content="Play the best free online games for your keyboard and mouse! Discover thousands of fun and challenging browser games."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.crazykeyboardgames.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- Fonts and Styles -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -47,12 +40,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
     <header>
       <div class="header-content">
-        <a href="index.html" class="logo" aria-label="Crazy Keyboard Games Home"
-          >Crazy Keyboard Games</a
+        <button
+          class="mobile-menu-button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
         >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="index.html" class="logo">Crazy Keyboard Games</a>
         <div class="search-bar">
           <input
             type="text"
@@ -65,6 +63,9 @@
           </button>
         </div>
         <div class="user-actions">
+          <button class="mobile-search-button" aria-label="Open search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
           <a href="#" class="action-icon" aria-label="User profile"
             ><i class="fa-solid fa-user"></i
           ></a>
@@ -72,103 +73,94 @@
       </div>
     </header>
 
-    <div class="page-container">
-      <aside class="left-sidebar" aria-label="Navigation menu">
-        <nav class="sidebar-nav">
-          <div class="sidebar-section">
-            <a href="#" class="category-link category-home" aria-label="Home"
-              ><i class="fa-solid fa-house"></i><span>Home</span></a
-            >
-            <a
-              href="#"
-              class="category-link category-recent"
-              aria-label="Recently played"
-              ><i class="fa-regular fa-clock"></i
-              ><span>Recently played</span></a
-            >
-            <a
-              href="#"
-              class="category-link category-new"
-              aria-label="New games"
-              ><i class="fa-solid fa-star"></i><span>New</span></a
-            >
-            <a
-              href="#"
-              class="category-link category-trending"
-              aria-label="Trending games"
-              ><i class="fa-solid fa-fire"></i><span>Trending now</span></a
-            >
+    <div class="page-wrapper">
+      <div id="sidebar-placeholder"></div>
+      <div class="content-and-footer">
+        <main id="main-content" class="main-content-grid">
+          <h1>Play Free Online Games on Crazy Keyboard Games</h1>
+          <div class="game-list">
+            <a href="games/game-template.html" class="game-card">
+              <img
+                src="https://via.placeholder.com/300x200?text=Game+1"
+                alt="Game Title One thumbnail"
+                loading="lazy"
+                width="300"
+                height="200"
+              />
+              <div class="game-card-info">
+                <h3>Game Title One</h3>
+                <p>Description</p>
+              </div>
+            </a>
           </div>
-          <div class="sidebar-section">
-            <a
-              href="#"
-              class="category-link category-puzzle"
-              aria-label="Puzzle games"
-              ><i class="fa-solid fa-puzzle-piece"></i><span>Puzzle</span></a
-            >
-            <a
-              href="#"
-              class="category-link category-action"
-              aria-label="Action games"
-              ><i class="fa-solid fa-jet-fighter"></i><span>Action</span></a
-            >
-            <a
-              href="#"
-              class="category-link category-racing"
-              aria-label="Racing games"
-              ><i class="fa-solid fa-flag-checkered"></i><span>Racing</span></a
-            >
-            <a
-              href="#"
-              class="category-link category-sports"
-              aria-label="Sports games"
-              ><i class="fa-solid fa-basketball"></i><span>Sports</span></a
-            >
-            <a
-              href="#"
-              class="category-link category-strategy"
-              aria-label="Strategy games"
-              ><i class="fa-solid fa-chess"></i><span>Strategy</span></a
-            >
-          </div>
-        </nav>
-      </aside>
-
-      <main class="main-content-grid">
-        <h1>Play Free Online Games on Crazy Keyboard Games</h1>
-        <div class="game-list">
-          <a href="games/game-template.html" class="game-card">
-            <img
-              src="https://via.placeholder.com/300x200?text=Game+1"
-              alt="Game Title One thumbnail"
-              loading="lazy"
-              width="300"
-              height="200"
-            />
-            <div class="game-card-info">
-              <h3>Game Title One</h3>
-              <p>Description</p>
-            </div>
-          </a>
-          <a href="#" class="game-card">
-            <img
-              src="https://via.placeholder.com/300x200?text=Game+2"
-              alt="Game Title Two thumbnail"
-              loading="lazy"
-              width="300"
-              height="200"
-            />
-            <div class="game-card-info">
-              <h3>Game Title Two</h3>
-              <p>Description</p>
-            </div>
-          </a>
-        </div>
-      </main>
+        </main>
+        <footer>
+          <p>&copy; 2025 Crazy Keyboard Games. All rights reserved.</p>
+        </footer>
+      </div>
     </div>
+    <script>
+      // Sidebar loading with error handling
+      fetch("/_sidebar.html")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to load sidebar");
+          }
+          return response.text();
+        })
+        .then((data) => {
+          document.getElementById("sidebar-placeholder").innerHTML = data;
+        })
+        .catch((error) => {
+          console.error("Error loading sidebar:", error);
+          document.getElementById("sidebar-placeholder").innerHTML =
+            '<div class="error-message">Failed to load navigation. Please refresh the page.</div>';
+        });
 
-    <footer>
-      <p>&copy; 2025 Crazy Keyboard Games. All rights reserved.</p>
-    </footer>
+      // Mobile menu functionality
+      const mobileMenuButton = document.querySelector(".mobile-menu-button");
+      const leftSidebar = document.querySelector(".left-sidebar");
+
+      mobileMenuButton?.addEventListener("click", () => {
+        const isExpanded =
+          mobileMenuButton.getAttribute("aria-expanded") === "true";
+        mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
+        leftSidebar?.classList.toggle("active");
+      });
+
+      // Mobile search functionality
+      const mobileSearchButton = document.querySelector(
+        ".mobile-search-button"
+      );
+      const searchBar = document.querySelector(".search-bar");
+
+      mobileSearchButton?.addEventListener("click", () => {
+        searchBar?.classList.toggle("active");
+        if (searchBar?.classList.contains("active")) {
+          searchBar.querySelector("input")?.focus();
+        }
+      });
+
+      // Close search when clicking outside
+      document.addEventListener("click", (event) => {
+        if (
+          !searchBar?.contains(event.target) &&
+          !mobileSearchButton?.contains(event.target)
+        ) {
+          searchBar?.classList.remove("active");
+        }
+      });
+
+      // Handle search form submission
+      const searchForm = document.querySelector(".search-bar");
+      searchForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const searchInput = searchForm.querySelector("input");
+        if (searchInput?.value.trim()) {
+          // TODO: Implement search functionality
+          console.log("Searching for:", searchInput.value);
+        }
+      });
+    </script>
   </body>
 </html>

@@ -1,95 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D4CE1ZYVCT"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Play [Game Name] - [Brief game description]. A free online browser game on Crazy Keyboard Games."
+    />
+    <title>[Game Name] - Play Free Online Game | Crazy Keyboard Games</title>
+    <link
+      rel="canonical"
+      href="https://www.crazykeyboardgames.com/games/[game-slug].html"
+    />
 
-    gtag('config', 'G-D4CE1ZYVCT');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Play [Game Name] and many more free online games for your keyboard and mouse on Crazy Keyboard Games.">
-    <title>Game Name | Crazy Keyboard Games</title>
-    <link rel="canonical" href="https://www.crazykeyboardgames.com/games/your-game-url-here.html" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="../style.css">
-</head>
-<body>
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="[Game Name] - Play Free Online Game" />
+    <meta
+      property="og:description"
+      content="[Brief game description]. Play now for free on Crazy Keyboard Games!"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://www.crazykeyboardgames.com/games/[game-slug].html"
+    />
+    <meta
+      property="og:image"
+      content="https://www.crazykeyboardgames.com/games/images/[game-slug].jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
 
+    <!-- Fonts and Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
     <header>
-        <div class="header-content">
-            <a href="../index.html" class="logo">Crazy Keyboard Games</a>
-            <div class="search-bar">
-                <input type="text" class="search-input" placeholder="Search for a game...">
-                <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
-            <div class="user-actions">
-                <a href="#" class="action-icon"><i class="fa-solid fa-user"></i></a>
-            </div>
+      <div class="header-content">
+        <button
+          class="mobile-menu-button"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="../index.html" class="logo">Crazy Keyboard Games</a>
+        <div class="search-bar">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search for a game..."
+            aria-label="Search games"
+          />
+          <button class="search-button" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
         </div>
+        <div class="user-actions">
+          <button class="mobile-search-button" aria-label="Open search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <a href="#" class="action-icon" aria-label="User profile"
+            ><i class="fa-solid fa-user"></i
+          ></a>
+        </div>
+      </div>
     </header>
 
-    <div class="page-container">
-        <aside class="left-sidebar">
-            <nav class="sidebar-nav">
-                <div class="sidebar-section">
-                    <a href="../index.html" class="category-link category-home"><i class="fa-solid fa-house"></i><span>Home</span></a>
-                    <a href="#" class="category-link category-recent"><i class="fa-regular fa-clock"></i><span>Recently played</span></a>
-                    <a href="#" class="category-link category-new"><i class="fa-solid fa-star"></i><span>New</span></a>
-                    <a href="#" class="category-link category-trending"><i class="fa-solid fa-fire"></i><span>Trending now</span></a>
-                </div>
-                <div class="sidebar-section">
-                    <a href="#" class="category-link category-puzzle"><i class="fa-solid fa-puzzle-piece"></i><span>Puzzle</span></a>
-                    <a href="#" class="category-link category-action"><i class="fa-solid fa-jet-fighter"></i><span>Action</span></a>
-                    <a href="#" class="category-link category-racing"><i class="fa-solid fa-flag-checkered"></i><span>Racing</span></a>
-                    <a href="#" class="category-link category-sports"><i class="fa-solid fa-basketball"></i><span>Sports</span></a>
-                    <a href="#" class="category-link category-strategy"><i class="fa-solid fa-chess"></i><span>Strategy</span></a>
-                </div>
-            </nav>
-        </aside>
+    <div class="page-wrapper">
+      <div id="sidebar-placeholder"></div>
+      <div class="content-and-footer">
+        <main id="main-content" class="game-page-content">
+          <div class="game-main-column">
+            <h1 class="game-title">[Game Name]</h1>
 
-        <main class="main-content-grid">
-            <div class="game-wrapper">
-                <div class="game-main">
-                    <h1 class="game-title">REPLACE WITH GAME NAME</h1>
-                    <div class="game-container">
-                        <iframe src="https://www.example.com/game-embed-url" width="960" height="540" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="game-details-box">
-                        <div class="game-description">
-                            <h3>About This Game</h3>
-                            <p>Replace this with a short, exciting description.</p>
-                        </div>
-                        <div class="game-meta">
-                            <h3>Details</h3>
-                            <ul>
-                                <li><strong>Developer:</strong> <span>Placeholder</span></li>
-                                <li><strong>Released:</strong> <span>Placeholder</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <aside class="sidebar game-page-sidebar">
-                    <h3>Similar Games</h3>
-                    <div class="sidebar-game-list">
-                        <a href="#" class="sidebar-game-card"><img src="https://via.placeholder.com/150x100"><div class="sidebar-game-info"><h4>Cool Game</h4></div></a>
-                        <a href="#" class="sidebar-game-card"><img src="https://via.placeholder.com/150x100"><div class="sidebar-game-info"><h4>Puzzle Game</h4></div></a>
-                    </div>
-                </aside>
+            <div
+              class="game-container"
+              role="application"
+              aria-label="[Game Name] game"
+            >
+              <!-- Game iframe or canvas will be inserted here -->
+              <div class="game-loading">
+                <div class="loading-spinner"></div>
+                <p>Loading game...</p>
+              </div>
             </div>
+
+            <div class="game-details-box">
+              <h2>About [Game Name]</h2>
+              <p class="game-description">[Detailed game description]</p>
+
+              <h3>How to Play</h3>
+              <ul class="game-controls">
+                <li><kbd>W</kbd> or <kbd>↑</kbd> - Move Up</li>
+                <li><kbd>S</kbd> or <kbd>↓</kbd> - Move Down</li>
+                <li><kbd>A</kbd> or <kbd>←</kbd> - Move Left</li>
+                <li><kbd>D</kbd> or <kbd>→</kbd> - Move Right</li>
+                <li><kbd>Space</kbd> - Action</li>
+              </ul>
+
+              <div class="game-meta">
+                <h3>Game Information</h3>
+                <ul>
+                  <li>
+                    <strong>Category:</strong>
+                    <a href="../games/[category].html">[Category]</a>
+                  </li>
+                  <li><strong>Difficulty:</strong> [Easy/Medium/Hard]</li>
+                  <li><strong>Players:</strong> [Single/Multiplayer]</li>
+                  <li><strong>Controls:</strong> [Keyboard/Mouse/Both]</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <aside class="game-sidebar-column">
+            <h2>Similar Games</h2>
+            <div class="sidebar-game-list">
+              <!-- Similar games will be dynamically loaded here -->
+            </div>
+          </aside>
         </main>
+
+        <footer>
+          <p>&copy; 2025 Crazy Keyboard Games. All rights reserved.</p>
+        </footer>
+      </div>
     </div>
 
-    <footer>
-        <p>&copy; 2025 Crazy Keyboard Games. All rights reserved.</p>
-    </footer>
+    <script>
+      // Sidebar loading with error handling
+      fetch("/_sidebar.html")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to load sidebar");
+          }
+          return response.text();
+        })
+        .then((data) => {
+          document.getElementById("sidebar-placeholder").innerHTML = data;
+          // Initialize mobile menu after sidebar is loaded
+          initializeMobileMenu();
+        })
+        .catch((error) => {
+          console.error("Error loading sidebar:", error);
+          document.getElementById("sidebar-placeholder").innerHTML =
+            '<div class="error-message">Failed to load navigation. Please refresh the page.</div>';
+        });
 
-</body>
+      // Mobile menu functionality
+      function initializeMobileMenu() {
+        const mobileMenuButton = document.querySelector(".mobile-menu-button");
+        const leftSidebar = document.querySelector(".left-sidebar");
+        const contentAndFooter = document.querySelector(".content-and-footer");
+
+        if (mobileMenuButton && leftSidebar) {
+          mobileMenuButton.addEventListener("click", () => {
+            const isExpanded =
+              mobileMenuButton.getAttribute("aria-expanded") === "true";
+            mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
+            leftSidebar.classList.toggle("active");
+
+            // Update button icon
+            const icon = mobileMenuButton.querySelector("i");
+            if (icon) {
+              icon.className = isExpanded
+                ? "fa-solid fa-bars"
+                : "fa-solid fa-xmark";
+            }
+          });
+
+          // Close sidebar when clicking outside
+          document.addEventListener("click", (event) => {
+            if (
+              leftSidebar.classList.contains("active") &&
+              !leftSidebar.contains(event.target) &&
+              !mobileMenuButton.contains(event.target)
+            ) {
+              leftSidebar.classList.remove("active");
+              mobileMenuButton.setAttribute("aria-expanded", "false");
+              const icon = mobileMenuButton.querySelector("i");
+              if (icon) {
+                icon.className = "fa-solid fa-bars";
+              }
+            }
+          });
+        }
+      }
+
+      // Mobile search functionality
+      const mobileSearchButton = document.querySelector(
+        ".mobile-search-button"
+      );
+      const searchBar = document.querySelector(".search-bar");
+
+      mobileSearchButton?.addEventListener("click", () => {
+        searchBar?.classList.toggle("active");
+        if (searchBar?.classList.contains("active")) {
+          searchBar.querySelector("input")?.focus();
+        }
+      });
+
+      // Close search when clicking outside
+      document.addEventListener("click", (event) => {
+        if (
+          !searchBar?.contains(event.target) &&
+          !mobileSearchButton?.contains(event.target)
+        ) {
+          searchBar?.classList.remove("active");
+        }
+      });
+
+      // Game loading functionality
+      function loadGame() {
+        const gameContainer = document.querySelector(".game-container");
+        const loadingElement = document.querySelector(".game-loading");
+
+        // TODO: Replace with actual game loading logic
+        setTimeout(() => {
+          loadingElement.style.display = "none";
+          // Add game iframe or canvas here
+        }, 1000);
+      }
+
+      // Load similar games
+      function loadSimilarGames() {
+        const similarGamesList = document.querySelector(".sidebar-game-list");
+        // TODO: Replace with actual similar games loading logic
+        similarGamesList.innerHTML = `
+          <a href="../games/game1.html" class="sidebar-game-card">
+            <img src="../games/images/game1.jpg" alt="Game 1 thumbnail" width="120" height="80">
+            <div class="sidebar-game-info">
+              <h4>Similar Game 1</h4>
+            </div>
+          </a>
+          <!-- Add more similar games here -->
+        `;
+      }
+
+      // Initialize game
+      document.addEventListener("DOMContentLoaded", () => {
+        loadGame();
+        loadSimilarGames();
+      });
+    </script>
+  </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GameMonetize SDK Test</title>
+    <style>
+        body { font-family: sans-serif; }
+        #game-container {
+            width: 800px;
+            height: 600px;
+            border: 2px solid #333;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>GameMonetize SDK Test Page</h1>
+    <p>The game should load in the black box below. Check the developer console for messages.</p>
+
+    <div id="game-container"></div>
+
+    <script type="text/javascript">
+        window.SDK_OPTIONS = {
+            // THIS IS THE CORRECT ID FROM YOUR SCREENSHOT
+            gameId: "0oj4ohrdfog5hba9jp7i47j0fn8ov9v2",
+
+            containerId: "game-container",
+
+            onEvent: function (event) {
+                console.log("SDK_EVENT:", event.name, event.data || "");
+            }
+        };
+    </script>
+
+    <script type="text/javascript" src="https://api.gamemonetize.com/sdk.js"></script>
+
+</body>
+</html>
