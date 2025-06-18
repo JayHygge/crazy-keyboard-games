@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap");
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-game-dark text-white font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-gaming font-semibold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-game-dark;
+  }
+
+  .btn-secondary {
+    @apply bg-game-accent hover:bg-primary-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-game-dark;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-game-dark;
+  }
+
+  .game-card {
+    @apply bg-game-darker rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+
+  .game-card-hover {
+    @apply hover:scale-105 transition-transform duration-300;
+  }
+
+  .carousel-container {
+    @apply relative overflow-hidden;
+  }
+
+  .carousel-track {
+    @apply flex transition-transform duration-500 ease-in-out;
+  }
+
+  .search-input {
+    @apply w-full px-4 py-3 bg-game-darker border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+
+  .tag-filter {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-game-accent text-white hover:bg-primary-600 transition-colors duration-200 cursor-pointer;
+  }
+
+  .tag-filter.active {
+    @apply bg-primary-600;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-400 to-game-highlight bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-game {
+    @apply bg-gradient-to-br from-game-dark via-game-darker to-game-accent;
+  }
+
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-game-darker;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-game-accent rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-600;
+}
+
+/* Video preview hover effects */
+.video-preview {
+  @apply absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300;
+}
+
+.game-card:hover .video-preview {
+  @apply opacity-100;
+}
+
+/* Loading animations */
+.loading-skeleton {
+  @apply animate-pulse bg-gray-700 rounded;
+}
+
+/* Theater mode styles */
+.theater-mode {
+  @apply fixed inset-0 z-50 bg-black;
+}
+
+.theater-mode .game-iframe {
+  @apply w-full h-full;
+}
+
+/* Responsive iframe container */
+.iframe-container {
+  @apply relative w-full h-0 pb-[56.25%]; /* 16:9 aspect ratio */
+}
+
+.iframe-container iframe {
+  @apply absolute top-0 left-0 w-full h-full;
+}
