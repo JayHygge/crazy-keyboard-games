@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["www.gamemonetize.com", "gamemonetize.com"],
+    domains: [
+      "www.gamemonetize.com",
+      "gamemonetize.com",
+      "img.gamemonetize.com",
+    ],
     formats: ["image/webp", "image/avif"],
   },
   async headers() {
